@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <EditTextPreference
+        android:defaultValue="@string/default_zipcode"
+        android:dialogTitle="@string/settings_zip"
+        android:key="@string/settings_zip_key"
+        android:title="@string/settings_zip"/>
+
+    <ListPreference
+        android:defaultValue="@string/unit_celsius"
+        android:dialogTitle="@string/settings_units"
+        android:entries="@array/unit_entries"
+        android:entryValues="@array/unit_values"
+        android:key="@string/settings_units_key"
+        android:title="@string/settings_units"/>
+
+</PreferenceScreen>

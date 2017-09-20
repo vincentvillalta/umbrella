@@ -1,12 +1,14 @@
 buildscript {
+  ext.kotlin_version = '1.1.4-3'
   repositories {
     jcenter()
   }
   dependencies {
-    classpath 'com.android.tools.build:gradle:2.2.3'
-    classpath 'me.tatarka:gradle-retrolambda:3.4.0'
+    classpath 'com.android.tools.build:gradle:3.0.0-beta6'
+    classpath 'me.tatarka:gradle-retrolambda:3.7.0'
     classpath 'me.tatarka.retrolambda.projectlombok:lombok.ast:0.2.3.a2'
     classpath 'com.github.ben-manes:gradle-versions-plugin:0.13.0'
+    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
   }
 }
 
@@ -15,8 +17,11 @@ repositories{
 }
 
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 apply plugin: 'me.tatarka.retrolambda'
 apply plugin: 'com.github.ben-manes.versions'
+
 
 // Use `com.foo.umbrella.weatherundergroundapikey` in gradle.properties or as a command line
 // parameter or `WEATHER_UNDERGROUND_API_KEY` as a System Environment variable to provide weather
@@ -45,7 +50,7 @@ android {
     versionCode 1
     versionName '1.0'
 
-    buildConfigField "String", "API_KEY", "\"$project.weatherUndergroundApiKey\""
+    buildConfigField "String", "API_KEY", "\"6bbffa15f08b23a1\""
     buildConfigField "String", "API_URL", "\"http://api.wunderground.com\""
 
     signingConfig signingConfigs.umbrella
@@ -93,6 +98,8 @@ dependencies {
 
   compile 'com.f2prateek.rx.preferences:rx-preferences:1.0.2'
 
+  compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
   debugCompile 'com.facebook.stetho:stetho:1.4.2'
   debugCompile 'com.facebook.stetho:stetho-okhttp3:1.4.2'
   debugCompile 'com.facebook.stetho:stetho-timber:1.4.2@aar'

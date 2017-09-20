@@ -1,3 +1,18 @@
 <resources>
   <string name="app_name">Umbrella</string>
+
+  <string name="temperature">%1$s°</string>
+
+  <string name="settings_units">Units</string>
+  <string name="settings_zip">Zip</string>
+  <string name="unit_celsius">Celsius</string>
+  <string name="unit_fahrenheit">Fahrenheit</string>
+
+  <string name="settings_units_key">unit</string>
+  <string name="settings_zip_key">zip</string>
+
+  <string name="default_zipcode">33102</string>
+
+  <string name="today">Today</string>
+  <string name="tomorrow">Tomorrow</string>
 </resources>
